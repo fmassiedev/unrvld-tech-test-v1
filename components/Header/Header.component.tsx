@@ -5,7 +5,7 @@ import NavIcons from "./NavIcons.comonent";
 
 const Header = () => {
   return (
-    <header className="py-4 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 flex justify-between align-middle">
+    <header className="container mx-auto p-4 flex justify-between align-middle">
       <div className="md:flex flex-1 items-center justify-between gap-8 h-full">
         <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
           <Link href="/" className="flex items-center gap-3">

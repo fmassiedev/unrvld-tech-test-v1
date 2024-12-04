@@ -12,9 +12,9 @@ export default function IconSearch({ width = 22, height = 22 }: TIcon) {
       <path
         d="m14.954 14.946 6.0464 6.0542m-4-11c0 3.866-3.134 7-7 7-3.866 0-7-3.134-7-7 0-3.866 3.134-7 7-7 3.866 0 7 3.134 7 7z"
         stroke="#000"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       />
     </svg>
   );
