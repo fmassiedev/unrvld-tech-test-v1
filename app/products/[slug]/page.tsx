@@ -1,5 +1,5 @@
 import React from "react";
 
-export default async function Page() {
-  return <div>Single Product Page</div>;
+export default async function ProductDetailsPage() {
+  return <div>Product Details Page</div>;
 }
