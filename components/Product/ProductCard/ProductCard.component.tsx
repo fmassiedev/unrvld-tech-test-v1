@@ -50,13 +50,13 @@ export default function ProductCard({ product }: TProduct) {
       </Link>
 
       <div className="p-4 flex flex-col flex-1">
-        <p className="text-gray-900 font-bold">
+        <p className="text-slate-900 font-bold">
           &#36;{product.variants.edges[0]?.node.price.amount}
         </p>
-        <h2 className="text-xl font-semibold text-gray-800 mt-2">
+        <h2 className="text-xl font-semibold text-slate-800 mt-2">
           <Link href={link}>{product.title}</Link>
         </h2>
-        <p className="text-gray-600 mt-2 text-sm">{product.description}</p>
+        <p className="text-slate-600 mt-2 text-sm">{product.description}</p>
         <div className="flex justify-between gap-4 mt-auto">
           <Link
             href={link}
