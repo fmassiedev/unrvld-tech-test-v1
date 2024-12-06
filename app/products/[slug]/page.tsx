@@ -1,4 +1,5 @@
 import PageTitle from "@/components/PageTitle/PageTitle.component";
+import ProductAddToCart from "@/components/Product/ProductAddToCart/ProductAddToCart.component";
 import ProductGallery from "@/components/Product/ProductGallery/ProductGallery.component";
 
 export default async function ProductDetailsPage() {
@@ -23,6 +24,7 @@ export default async function ProductDetailsPage() {
           <div className="h-[2px] bg-slate-100" />
           Something with Variants?
           <div className="h-[2px] bg-slate-100" />
+          <ProductAddToCart />
         </div>
       </div>
     </main>

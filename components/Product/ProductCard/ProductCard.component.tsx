@@ -64,14 +64,6 @@ export default function ProductCard({ product }: TProduct) {
           >
             View Product
           </Link>
-
-          {/* TODO: CREATE ADD TO CART FUNCTIONALITY */}
-          <Link
-            href=""
-            className="flex-1 text-center mt-4 px-4 py-2 bg-slate-600 text-white font-medium rounded-md hover:bg-slate-700 transition"
-          >
-            Add to Basket
-          </Link>
         </div>
       </div>
     </div>
