@@ -15,8 +15,8 @@ export default function ProductAddToCart() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <h4 className="font-medium">How many</h4>
+    <div className="flex flex-col gap-2">
+      <h4 className="font-medium">Quantity</h4>
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4">
           <div className="bg-slate-100 py-2 px-4 rounded-3xl flex items-center justify-between w-32">

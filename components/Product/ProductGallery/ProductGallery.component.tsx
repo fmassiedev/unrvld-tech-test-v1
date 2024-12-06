@@ -39,7 +39,7 @@ export default function ProductGallery() {
       <div className="flex justify-between gap-4">
         {DUMMY_IMAGES.map((img: { id: number; url: string }, i: number) => (
           <div
-            className="w-1/4 h-32 relative gap-4 mt-4 cursor-pointer"
+            className="w-1/4 aspect-[1/1] relative gap-4 mt-4 cursor-pointer"
             key={img.id}
             onClick={() => setActiveImageIndex(i)}
           >
