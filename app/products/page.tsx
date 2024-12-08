@@ -10,7 +10,7 @@ export default async function ProductListingPage({
 }) {
   return (
     <main>
-      <PageTitle title="Products" />
+      <PageTitle title="Products" hasBackButton={true} />
       <ProductFilter />
       <ProductList searchParams={searchParams} />
     </main>

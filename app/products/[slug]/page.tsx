@@ -18,7 +18,7 @@ export default async function ProductDetailsPage({ params }: { params: { slug: s
 
   return (
     <main>
-      <PageTitle title="Single Product" />
+      <PageTitle title="Single Product" hasBackButton={true} />
 
       <div className="container mx-auto max-w-[1200px] p-4 relative flex flex-col lg:flex-row gap-16">
         {product.featuredImage && (
