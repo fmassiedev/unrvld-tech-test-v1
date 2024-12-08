@@ -7,7 +7,7 @@ export default function NotFound() {
       <PageTitle title="Not Found" />
       <div className="container mx-auto p-4">
         <h3 className="text-4xl font-semibold text-slate-800 mt-12 mb-8">
-          Oops! Couldn't find the page!
+          Oops! Couldn&#39;t find the page!
         </h3>
         <Link href="/">Back to Home</Link>
       </div>

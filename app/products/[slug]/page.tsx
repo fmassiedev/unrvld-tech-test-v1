@@ -4,8 +4,12 @@ import ProductGallery from "@/components/Products/ProductGallery.component";
 import { getProduct } from "@/lib/api/products";
 import { notFound } from "next/navigation";
 
-export default async function ProductDetailsPage({ params }: { params: { slug: string } }) {
-  const slug = (await params).slug;
+export default async function ProductDetailsPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
   const productData = await getProduct(slug);
 

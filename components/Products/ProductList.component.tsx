@@ -8,7 +8,7 @@ export default async function ProductList({
 }: {
   searchParams: { collectionId?: string };
 }) {
-  const { collectionId } = await searchParams;
+  const { collectionId } = searchParams;
 
   let products: TProduct[] = [];
   let collection: TCollection | null = null;

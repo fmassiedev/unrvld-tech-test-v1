@@ -6,13 +6,15 @@ import React from "react";
 export default async function ProductListingPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | undefined };
+  searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
+  const params = await searchParams;
+
   return (
     <main>
       <PageTitle title="Products" hasBackButton={true} />
       <ProductFilter />
-      <ProductList searchParams={searchParams} />
+      <ProductList searchParams={params} />
     </main>
   );
 }
