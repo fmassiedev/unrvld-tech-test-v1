@@ -11,6 +11,8 @@ export default function ProductFilter() {
   const { replace } = useRouter();
 
   const [collections, setCollections] = useState<TCollection[]>([]);
+  const collectionIdParam = searchParams.get("collectionId");
+
   useEffect(() => {
     const fetchCollections = async () => {
       try {
@@ -45,6 +47,7 @@ export default function ProductFilter() {
           id="collectionId"
           className="py-2 px-4 rounded text-xs font-medium bg-slate-100"
           onChange={handleFilterChange}
+          value={collectionIdParam || ""}
         >
           <option value="">All Collections</option>
           {collections &&
@@ -55,6 +58,7 @@ export default function ProductFilter() {
             ))}
         </select>
       </div>
+
       {/* TODO: Ran out of time to implement sort */}
       <select
         name="sort"

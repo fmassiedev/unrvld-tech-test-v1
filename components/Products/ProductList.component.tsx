@@ -1,6 +1,6 @@
 import React from "react";
-import ProductCard from "../ProductCard/ProductCard.component";
-import { TCollection, TProduct } from "../types";
+import ProductCard from "./ProductCard.component";
+import { TCollection, TProduct } from "./types";
 import { getCollectionWithProducts, getProducts } from "@/lib/api/products";
 
 export default async function ProductList({

@@ -1,6 +1,6 @@
 import PageTitle from "@/components/PageTitle/PageTitle.component";
-import ProductAddToCart from "@/components/Products/ProductAddToCart/ProductAddToCart.component";
-import ProductGallery from "@/components/Products/ProductGallery/ProductGallery.component";
+import ProductAddToCart from "@/components/Products/ProductAddToCart.component";
+import ProductGallery from "@/components/Products/ProductGallery.component";
 import { getProduct } from "@/lib/api/products";
 import { notFound } from "next/navigation";
 

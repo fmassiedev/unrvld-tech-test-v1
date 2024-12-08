@@ -1,6 +1,6 @@
 import { getCollections } from "@/lib/api/products";
-import { TCollection } from "../types";
-import CollectionCard from "../ProductCollectionCard/ProductCollectionCard.component";
+import { TCollection } from "./types";
+import CollectionCard from "./ProductCollectionCard.component";
 
 export default async function ProductCollectionsList() {
   const collectionsData = await getCollections();
