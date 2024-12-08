@@ -7,14 +7,9 @@ export type TProduct = {
     url: string;
   };
   variants: {
-    edges: {
-      node: {
-        price: {
-          amount: string;
-          currencyCode: string;
-        };
-      };
-    }[];
+    edges: Array<{
+      node: ProductVariant;
+    }>;
   };
 };
 
@@ -30,5 +25,15 @@ export type TCollection = {
   image: {
     id: string;
     url: string;
+  };
+};
+
+export type TProductVariant = {
+  id: string;
+  title: string;
+  image?: { url: string };
+  price: {
+    amount: string;
+    currencyCode: string;
   };
 };
