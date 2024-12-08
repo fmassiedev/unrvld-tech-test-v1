@@ -113,7 +113,7 @@ export async function getCollection(
 ): Promise<{ data: { collection: TCollection } }> {
   const query = `
     {
-      product(id: "gid://shopify/Collection/${collectionId}") {
+      collection(id: "gid://shopify/Collection/${collectionId}") {
         id
         handle
         title
@@ -121,6 +121,50 @@ export async function getCollection(
         image {
           id
           url
+        }
+      }
+    }
+  `;
+
+  return fetchFromMockShopAPI(query);
+}
+
+export async function getCollectionWithProducts(
+  collectionId: string
+): Promise<{ data: { collection: TCollection } }> {
+  const query = `
+    {
+      collection(id: "gid://shopify/Collection/${collectionId}") {
+        id
+        handle
+        title
+        description
+        image {
+          id
+          url
+        }
+        products(first: 10) {
+          edges {
+            node {
+              id
+              title
+              description
+              featuredImage {
+                id
+                url
+              }
+              variants(first: 3) {
+                edges {
+                  node {
+                    price {
+                      amount
+                      currencyCode
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

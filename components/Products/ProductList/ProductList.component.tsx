@@ -1,13 +1,28 @@
 import React from "react";
 import ProductCard from "../ProductCard/ProductCard.component";
-import { TProduct } from "../types";
-import { getProducts } from "@/lib/api/products";
+import { TCollection, TProduct } from "../types";
+import { getCollectionWithProducts, getProducts } from "@/lib/api/products";
 
-export default async function ProductList() {
-  const productsData = await getProducts();
-  const products: TProduct[] = productsData.data.products.edges.map(
-    (edge: { node: TProduct }) => edge.node
-  );
+export default async function ProductList({
+  searchParams,
+}: {
+  searchParams: { collectionId?: string };
+}) {
+  const { collectionId } = await searchParams;
+
+  let products: TProduct[] = [];
+  let collection: TCollection | null = null;
+
+  // If a collectionId is provided, get the collection data and its products
+  if (collectionId) {
+    const collectionData = await getCollectionWithProducts(collectionId);
+    collection = collectionData.data.collection;
+    products = collection.products.edges.map((edge: { node: TProduct }) => edge.node);
+  } else {
+    // Otherwise, get all products
+    const productsData = await getProducts();
+    products = productsData.data.products.edges.map((edge: { node: TProduct }) => edge.node);
+  }
 
   return (
     <div className="container mx-auto p-4">

@@ -7,7 +7,10 @@ type CollectionCardProps = {
 };
 
 export default function CollectionCard({ collection }: CollectionCardProps) {
-  const link = `/products/${collection.id.split("/").pop()}`;
+  const link = {
+    pathname: "/products",
+    query: { collectionId: collection.id.split("/").pop() || null },
+  };
 
   return (
     <div

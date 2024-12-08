@@ -3,12 +3,16 @@ import ProductFilter from "@/components/Products/ProductFilter/ProductFilter.com
 import ProductList from "@/components/Products/ProductList/ProductList.component";
 import React from "react";
 
-export default async function ProductListingPage() {
+export default async function ProductListingPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) {
   return (
     <main>
       <PageTitle title="Products" />
       <ProductFilter />
-      <ProductList />
+      <ProductList searchParams={searchParams} />
     </main>
   );
 }
