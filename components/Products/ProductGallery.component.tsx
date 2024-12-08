@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
-// NOTE: This was originally built with the idea of a thumbnail gellery in mind
-// but ran out of time to implement with variations.
+// NOTE: Originally built with the idea of a thumbnail gallery in mind
+// but ran out of time to implement with dynamic variations.
 
 type TImage = {
   id: string;
@@ -18,7 +18,7 @@ interface ProductGalleryProps {
 export default function ProductGallery({ images }: ProductGalleryProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  // Normalise `images` to always be an array
+  // Normalise images to always be an array
   const imageArray = Array.isArray(images) ? images : [images];
 
   return (

@@ -14,7 +14,9 @@ export type TProduct = {
 };
 
 export type TProducts = {
-  products: TProduct[];
+  edges: Array<{
+    node: TProduct;
+  }>;
 };
 
 export type TCollection = {
@@ -26,10 +28,14 @@ export type TCollection = {
     id: string;
     url: string;
   };
+  products: TProducts;
 };
 
 export type TCollections = {
-  collections: TCollection[];
+  edges: Array<{
+    cursor: string;
+    node: TCollection;
+  }>;
 };
 
 export type TProductVariant = {

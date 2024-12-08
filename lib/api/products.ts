@@ -1,4 +1,4 @@
-import { TCollection, TCollections, TProduct } from "@/components/Products/types";
+import { TCollection, TCollections, TProduct, TProducts } from "@/components/Products/types";
 
 export async function fetchFromMockShopAPI(query: string) {
   const url = "https://mock.shop/api";
@@ -6,6 +6,9 @@ export async function fetchFromMockShopAPI(query: string) {
 
   const response = await fetch(`${url}?${params.toString()}`, {
     method: "GET",
+    headers: {
+      "Cache-Control": "public, max-age=600", // Cache for 10 minutes
+    },
     // next: { revalidate: 60 }, // Could revalidate every 60 seconds if needed
   });
 
@@ -16,7 +19,7 @@ export async function fetchFromMockShopAPI(query: string) {
   return response.json();
 }
 
-export async function getProducts(first: number = 10): Promise<{ data: { products: TProduct } }> {
+export async function getProducts(first: number = 10): Promise<{ data: { products: TProducts } }> {
   const query = `
     {
       products(first: ${first}) {

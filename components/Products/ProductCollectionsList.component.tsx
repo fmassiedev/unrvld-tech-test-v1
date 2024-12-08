@@ -5,7 +5,7 @@ import CollectionCard from "./ProductCollectionCard.component";
 export default async function ProductCollectionsList() {
   const collectionsData = await getCollections();
   const collections: TCollection[] = collectionsData.data.collections.edges.map(
-    (edge: { node: TCollection }) => edge.node
+    (edge) => edge.node
   );
 
   return (

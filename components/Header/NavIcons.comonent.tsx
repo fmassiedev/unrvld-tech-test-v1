@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import IconProfile from "../Icons/profile.icon";
 import IconBasket from "../Icons/basket.icon";
 

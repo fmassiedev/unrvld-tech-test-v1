@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TCollection } from "../types";
+import { TCollection } from "./types";
 
 type CollectionCardProps = {
   collection: TCollection;

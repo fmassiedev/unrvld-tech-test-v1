@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TProduct } from "../types";
+import { TProduct } from "./types";
 
 type ProductCardProps = {
   product: TProduct;

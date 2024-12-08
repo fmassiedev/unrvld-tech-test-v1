@@ -17,11 +17,11 @@ export default async function ProductList({
   if (collectionId) {
     const collectionData = await getCollectionWithProducts(collectionId);
     collection = collectionData.data.collection;
-    products = collection.products.edges.map((edge: { node: TProduct }) => edge.node);
+    products = collection.products.edges.map((edge) => edge.node);
   } else {
-    // Otherwise, get all products
+    // Else, get all products
     const productsData = await getProducts();
-    products = productsData.data.products.edges.map((edge: { node: TProduct }) => edge.node);
+    products = productsData.data.products.edges.map((edge) => edge.node);
   }
 
   return (

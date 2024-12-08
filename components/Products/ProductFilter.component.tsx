@@ -3,7 +3,7 @@
 import { getCollections } from "@/lib/api/products";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { TCollection } from "../types";
+import { TCollection } from "./types";
 
 export default function ProductFilter() {
   const pathname = usePathname();
