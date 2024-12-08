@@ -8,7 +8,7 @@ export type TProduct = {
   };
   variants: {
     edges: Array<{
-      node: ProductVariant;
+      node: TProductVariant;
     }>;
   };
 };
@@ -26,6 +26,10 @@ export type TCollection = {
     id: string;
     url: string;
   };
+};
+
+export type TCollections = {
+  collections: TCollection[];
 };
 
 export type TProductVariant = {

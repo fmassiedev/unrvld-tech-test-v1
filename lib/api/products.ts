@@ -1,4 +1,4 @@
-import { TProduct } from "@/components/Products/types";
+import { TCollection, TCollections, TProduct } from "@/components/Products/types";
 
 export async function fetchFromMockShopAPI(query: string) {
   const url = "https://mock.shop/api";
@@ -16,7 +16,7 @@ export async function fetchFromMockShopAPI(query: string) {
   return response.json();
 }
 
-export async function getProducts(first: number = 10) {
+export async function getProducts(first: number = 10): Promise<{ data: { products: TProduct } }> {
   const query = `
     {
       products(first: ${first}) {
@@ -82,7 +82,9 @@ export async function getProduct(productId: string): Promise<{ data: { product: 
   return fetchFromMockShopAPI(query);
 }
 
-export async function getCollections(first: number = 10) {
+export async function getCollections(
+  first: number = 10
+): Promise<{ data: { collections: TCollections } }> {
   const query = `
     {
       collections(first: ${first}) {
@@ -106,10 +108,12 @@ export async function getCollections(first: number = 10) {
   return fetchFromMockShopAPI(query);
 }
 
-export async function getCollection(productId: string) {
+export async function getCollection(
+  collectionId: string
+): Promise<{ data: { collection: TCollection } }> {
   const query = `
     {
-      product(id: "gid://shopify/Collection/${productId}") {
+      product(id: "gid://shopify/Collection/${collectionId}") {
         id
         handle
         title
