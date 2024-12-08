@@ -1,29 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TProduct } from "../types";
 
-type TProduct = {
-  product: {
-    id: string;
-    title: string;
-    description: string;
-    featuredImage: {
-      id: string;
-      url: string;
-    };
-    variants: {
-      edges: {
-        node: {
-          price: {
-            amount: string;
-            currencyCode: string;
-          };
-        };
-      }[];
-    };
-  };
+type ProductCardProps = {
+  product: TProduct;
 };
 
-export default function ProductCard({ product }: TProduct) {
+export default function ProductCard({ product }: ProductCardProps) {
   const link = `/products/${product.id.split("/").pop()}`;
 
   return (
@@ -37,6 +20,9 @@ export default function ProductCard({ product }: TProduct) {
             src={product.featuredImage.url}
             alt={product.title}
             fill
+            sizes="(max-width: 640px) 100vw, 
+              (max-width: 1024px) 50vw, 
+              25vw"
             className="absolute object-cover"
           />
 
