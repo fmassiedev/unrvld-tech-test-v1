@@ -2,7 +2,7 @@
 
 ## Project Aims:
 
-To produce a small app in Next.js that consumers the Mock Shop API[Mock Shop API](https://mock.shop/) to display some content and data.
+To produce a small app in Next.js that consumers the [Mock Shop API](https://mock.shop/) to display some content and data.
 
 ## Deliverables
 
