@@ -2,6 +2,7 @@ import PageTitle from "@/components/PageTitle/PageTitle.component";
 import ProductAddToCart from "@/components/Products/ProductAddToCart.component";
 import ProductGallery from "@/components/Products/ProductGallery.component";
 import { getProduct } from "@/lib/api/products";
+import { formatPrice } from "@/lib/utils/formatPrice";
 import { notFound } from "next/navigation";
 
 export default async function ProductDetailsPage({
@@ -38,9 +39,7 @@ export default async function ProductDetailsPage({
           {/* TODO: For now using price of first variant */}
           {variants.length > 0 && (
             <>
-              <h2 className="font-medium text-2xl">
-                Price: {variants[0]?.price.amount} {variants[0]?.price.currencyCode}
-              </h2>
+              <h2 className="font-medium text-2xl">Price: {formatPrice(variants[0]?.price)}</h2>
               <div className="h-[2px] bg-slate-100" />
             </>
           )}
