@@ -5,13 +5,15 @@ import { useState } from "react";
 export default function ProductAddToCart() {
   const [quantity, setQuantity] = useState(1);
 
-  const handleQuantity = (type: "i" | "d") => {
-    if (type === "d" && quantity > 1) {
-      setQuantity((prev) => prev - 1);
-    }
-    if (type === "i") {
-      setQuantity((prev) => prev + 1);
-    }
+  const handleQuantity = (type: "increment" | "decrement") => {
+    setQuantity((prevQuantity) => {
+      if (type === "decrement" && prevQuantity > 1) {
+        return prevQuantity - 1;
+      } else if (type === "increment") {
+        return prevQuantity + 1;
+      }
+      return prevQuantity;
+    });
   };
 
   return (
@@ -22,7 +24,7 @@ export default function ProductAddToCart() {
           <div className="bg-slate-100 py-2 px-4 rounded-3xl flex items-center justify-between w-32">
             <button
               className="cursor-pointer text-xl disabled:cursor-not-allowed disabled:opacity-20"
-              onClick={() => handleQuantity("d")}
+              onClick={() => handleQuantity("decrement")}
               disabled={quantity <= 1}
             >
               -
@@ -30,7 +32,7 @@ export default function ProductAddToCart() {
             {quantity}
             <button
               className="cursor-pointer text-xl disabled:cursor-not-allowed disabled:opacity-20"
-              onClick={() => handleQuantity("i")}
+              onClick={() => handleQuantity("increment")}
             >
               +
             </button>

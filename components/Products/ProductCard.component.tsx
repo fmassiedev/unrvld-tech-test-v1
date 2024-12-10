@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TProduct } from "./types";
+import { formatPrice } from "@/lib/utils/formatPrice";
 
 type ProductCardProps = {
   product: TProduct;
@@ -12,7 +13,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div
       key={product.id}
-      className="bg-white border rounded-lg shadow-md overflow-hidden  flex flex-col hover:shadow-lg transition-shadow"
+      className="bg-white border rounded-lg shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow"
     >
       <Link href={link}>
         <div className="relative w-full aspect-w-1 aspect-h-1 group">
@@ -28,16 +29,16 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           {/* TODO: MAYBE OPEN QUICK VIEW IN MODAL? */}
           <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <button className="px-4 py-2 bg-transparent text-white font-bold rounded-md transition border border-white">
+            <div className="px-4 py-2 bg-transparent text-white font-bold rounded-md transition border border-white">
               View Product
-            </button>
+            </div>
           </div>
         </div>
       </Link>
 
       <div className="p-4 flex flex-col flex-1">
         <p className="text-slate-900 font-bold">
-          &#36;{product.variants.edges[0]?.node.price.amount}
+          {formatPrice(product.variants.edges[0]?.node.price)}
         </p>
         <h2 className="text-xl font-semibold text-slate-800 mt-2">
           <Link href={link}>{product.title}</Link>

@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UNRVLD Tech Test - Frances Massie
+
+## Project Aims:
+
+To produce a small app in Next.js that consumers the Mock Shop API[Mock Shop API](https://mock.shop/) to display some content and data.
+
+## Deliverables
+
+1. A home page & layout that provides an introduction and some form of navigation to
+dynamic child pages (e.g. PDP, PLP)
+2. A component of your choice (accordion, carousel, CTA Card etc..)
+3. A page with a CTA grid with a collection of items returned from the API – the grid should
+show at least 8 items.
 
 ## Getting Started
 
-First, run the development server:
+To get it up and running please clone the repo, navigate to the correct folder and then in your terminal run the following commands:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev or npm run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Summary
+If you have any questions, issues or feedback, please do get in touch. Thanks!
